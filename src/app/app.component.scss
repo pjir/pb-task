@@ -1,0 +1,77 @@
+@import '../styles/global';
+
+.pg-app {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.pb-wrapper {
+  padding: 0 0;
+}
+
+@media #{$fx-gt-sm} {
+  .pb-wrapper {
+    padding: 0 24px;
+  }
+}
+
+.pb-toolbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.pb-content-container {
+  padding: 96px 0 96px 0;
+  transform: translateY(-510px);
+  transition: transform 127ms ease-in-out;
+  padding-bottom: -510px;
+  height: calc(100% - 510px);
+}
+@media #{$fx-gt-md} {
+  .pb-content-container {
+    transition: initial;
+    transform: translateY(0);
+    height: 0;
+    padding: 128px 0;
+  }
+}
+
+.peachtree-bank-logo {
+  height: 36px;
+}
+
+.mat-toolbar {
+  background: #ffffff;
+  border-bottom: 4px solid mat-color($pb-task-accent, 0.9);
+  @include mat-elevation(4);
+  text-align: left;
+}
+
+.add-button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 999;
+}
+@media #{$fx-gt-xs} {
+  .add-buton {
+    right: 48px;
+    bottom: 48px;
+  }
+}
+
+.is-mobile-transaction {
+  .pb-content-container {
+    transform: translateY(0);
+  }
+}
+
+.pb-footer {
+  display: block;
+  width: 100%;
+  height: 96px;
+}

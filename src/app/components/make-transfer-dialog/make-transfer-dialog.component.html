@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Please confirm the transfer</h1>
+<div mat-dialog-content>
+  <div class="label">From account</div>
+  <div class="text">{{ transferData.fromAccount }}</div>
+  <div class="label">To account</div>
+  <div class="text">{{ transferData.toAccount }}</div>
+  <div class="label">Amount</div>
+  <div class="text">{{ transferData.amount | currency }}</div>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button color="warning" (click)="cancelTransfer()">CANCEL</button>
+  <button mat-flat-button color="accent" [mat-dialog-close]="true" cdkFocusInitial>
+    CONFIRM TRANSFER
+  </button>
+</div>

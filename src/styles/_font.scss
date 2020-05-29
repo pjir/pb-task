@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Kanit';
+    font-display: swap;
+    font-weight: 300;
+    src: local('Kanit'), url('/assets/fonts/Kanit-Light.ttf')
+}
+
+@font-face {
+    font-family: 'Kanit';
+    font-display: swap;
+    font-weight: 400;
+    src: local('Kanit'), url('/assets/fonts/Kanit-Regular.ttf')
+}
+
+@font-face {
+    font-family: 'Kanit';
+    font-display: swap;
+    font-weight: 500;
+    src: local('Kanit'), url('/assets/fonts/Kanit-Medium.ttf')
+}
+
+@font-face {
+    font-family: 'Kanit';
+    font-display: swap;
+    font-weight: 600;
+    src: local('Kanit'), url('/assets/fonts/Kanit-SemiBold.ttf')
+}
+
+@font-face {
+    font-family: 'Kanit';
+    font-display: swap;
+    font-weight: 700;
+    src: local('Kanit'), url('/assets/fonts/Kanit-Bold.ttf')
+}
+
+
+@font-face {
+    font-family: 'Kanit';
+    font-display: swap;
+    font-weight: 800;
+    src: local('Kanit'), url('/assets/fonts/Kanit-ExtraBold.ttf')
+}
+
+// @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100&display=swap');

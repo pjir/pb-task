@@ -1,0 +1,14 @@
+@import './styles/global';
+@import './styles/default';
+
+.pb-body-background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/assets/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}

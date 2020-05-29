@@ -1,0 +1,58 @@
+<div class="make-transfer-container">
+  <pb-tile>
+    <pb-tile-header [lowerSize]="true">
+      <div fxLayout="row" fxLayoutAlign="space-between center" fxFill>
+        <mat-icon class="header-icon" fxFlex>compare_arrows</mat-icon>
+        <div fxFlex="auto">Make a Transfer</div>
+      </div>
+    </pb-tile-header>
+    <pb-tile-content>
+      <form #transferForm="ngForm" [formGroup]="form" (ngSubmit)="submitTransfer()" class="make-transfer-form">
+        <label>FROM ACCOUNT</label>
+        <mat-form-field [floatLabel]="'never'">
+          <mat-label>FROM ACCOUNT</mat-label>
+          <input matInput formControlName="fromAccount" readonly aria-label="From account field" />
+        </mat-form-field>
+        <label>TO ACCOUNT</label>
+        <mat-form-field [floatLabel]="'never'">
+          <input
+            matInput
+            formControlName="toAccount"
+            placeholder="Beneficiary name..."
+            autocomplete="off"
+            aria-label="To account field"
+          />
+          <mat-error *ngIf="form.controls.toAccount.hasError('required')">
+            Beneficiary account is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <label>AMOUNT</label>
+        <mat-form-field [floatLabel]="'never'">
+          <input
+            matInput
+            #amountInput
+            formControlName="amount"
+            type="number"
+            placeholder="0.00"
+            autocomplete="off"
+            aria-label="Amount field"
+          />
+          <span matPrefix>$&nbsp;</span>
+          <mat-hint>Balance after transfer: {{ (accountBalance - amountInput.value).toFixed(2) | currency }}</mat-hint>
+          <mat-error *ngIf="form.controls.amount.hasError('required')">
+            Amount value is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="form.controls.amount.hasError('balanceExceeded')">
+            Allowed balance {{ balanceLimit | currency }} exceeded.
+          </mat-error>
+          <mat-error *ngIf="form.controls.amount.hasError('negativeAmount')">
+            The amount value must be positive.
+          </mat-error>
+        </mat-form-field>
+        <div class="submit-button-container">
+          <button type="submit" mat-flat-button color="accent" aria-label="Submit transfer">SUBMIT</button>
+        </div>
+      </form>
+    </pb-tile-content>
+  </pb-tile>
+</div>

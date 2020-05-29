@@ -1,0 +1,22 @@
+<mat-form-field class="pb-search-input" [floatLabel]="'never'">
+  <mat-label>Search by typing...</mat-label>
+  <input
+    matInput
+    type="text"
+    [value]="searchKeyword"
+    name="searchInput"
+    #input
+    (input)="onSearchChange($event.target.value)"
+    aria-label="Search field"
+  />
+  <button
+    mat-button
+    mat-icon-button
+    *ngIf="input.value"
+    matSuffix
+    aria-label="Search clear button"
+    (click)="input.value = ''; clearValue()"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>

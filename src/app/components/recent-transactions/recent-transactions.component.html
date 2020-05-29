@@ -1,0 +1,69 @@
+<pb-tile>
+  <pb-tile-header>
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxFill>
+      <mat-icon fxFlex>business_center</mat-icon>
+      <div fxFlex="auto">Recent Transactions</div>
+    </div>
+  </pb-tile-header>
+  <pb-tile-content>
+    <div class="recent-transactions-toolbar">
+      <div
+        fxLayout="column"
+        fxLayout.gt-sm="row"
+        fxLayoutAlign.gt-sm="space-between center"
+        fxFill
+        fxLayoutGap.gt-sm="36px"
+      >
+        <pb-search
+          fxFlex="grow"
+          [searchKeyword]="searchKeyword"
+          (searchKeywordChange)="filterTransaction($event)"
+        ></pb-search>
+        <div fxFlex.gt-sm="50%">
+          <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="24px">
+            <div class="sort-by-text">Sort by</div>
+            <pb-sort-by-bar
+              [sortByOptions]="sortByOptions"
+              [value]="sortBy$ | async"
+              (valueChange)="changeSort($event)"
+            ></pb-sort-by-bar>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="transaction-list-container">
+      <div class="transaction-list">
+        <div *ngFor="let transaction of transactions$ | async">
+          <div fxLayout="row" fxLayoutAlign="start stretch" fxFill>
+            <div fxFlex="10px" [ngStyle]="{ backgroundColor: transaction.categoryCode }"></div>
+            <div fxFlex="grow" class="transaction-row">
+              <div
+                fxLayout="row"
+                fxLayoutAlign="space-between stretch"
+                fxFill
+                fxLayoutGap="12px"
+                fxLayoutGap.gt-sm="24px"
+              >
+                <div fxFlex="48px" fxFlexAlign="center" class="transaction-row-date">
+                  {{ transaction.transactionDate | date: 'LLL dd':'':'en-EN' }}
+                </div>
+                <div fxHide fxShow.gt-xs fxFlex fxFlexAlign="center">
+                  <div class="transaction-logo">
+                    <img *ngIf="transaction?.merchantLogo" [src]="transaction?.merchantLogo" />
+                  </div>
+                </div>
+                <div fxFlex="grow" fxFlexAlign="center">
+                  <div class="transaction-row-title">{{ transaction.merchant }}</div>
+                  <div>{{ transaction.transactionType }}</div>
+                </div>
+                <div fxFlex fxFlexAlign="center" class="transaction-row-amount">
+                  {{ transaction.amount | currency }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </pb-tile-content>
+</pb-tile>

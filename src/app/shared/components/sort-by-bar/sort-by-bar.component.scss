@@ -1,0 +1,33 @@
+.pb-sort-by-bar {
+  & .mat-button-toggle {
+    font-family: inherit;
+  }
+
+  & .mat-button-toggle-label-content {
+    line-height: 36px !important;
+    padding: 0 12px !important;
+  }
+}
+.sort-by-bar-button-title {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+.sort-by-bar-arrow-icon {
+  opacity: 0.6;
+  width: 24px;
+  height: 30px;
+  font-size: 1.875rem;
+  transition: all 127ms ease-in-out;
+  &.sort-by-bar-arrow-icon-desc {
+    transform: rotateX(180deg);
+    transform-origin: center center;
+  }
+}
+
+.sort-by-bar-icon-container {
+  display: inline-block;
+  position: relative;
+  width: 16px;
+}

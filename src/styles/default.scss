@@ -1,0 +1,71 @@
+//  !!! Include this file only once as global with Viewencapsulation.None !!!!
+
+/* You can add global styles to this file, and also import other style files */
+
+.apNoTextSelect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently not supported by any browser */
+}
+
+// disable microsoft pseudo-elements on input etc..
+::-ms-clear {
+  display: none;
+}
+
+::-ms-reveal {
+  display: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  margin: none !important;
+  -webkit-tap-highlight-color: transparent;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+  overflow-y: scroll;
+  font-size: 1em;
+}
+
+form {
+  font-size: 1rem;
+}
+
+body {
+  margin: 0;
+  background-color: #fafafa;
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 300;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  font-family: 'Kanit', sans-serif;
+}

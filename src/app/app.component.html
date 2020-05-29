@@ -1,0 +1,26 @@
+<div class="pb-toolbar-container">
+  <mat-toolbar>
+    <pb-wrapper fxLayout="row" fxLayoutAlign="start center">
+      <img class="peachtree-bank-logo" src="/assets/logo.jpg" />
+    </pb-wrapper>
+  </mat-toolbar>
+</div>
+<div class="pb-content-container">
+  <pb-wrapper>
+    <div fxLayout="column" fxLayout.gt-md="row" fxLayout.gt-sm="space-between stretch" fxLayoutGap.gt-md="48px" fxFill>
+      <div fxFlex="100%" fxFlex.gt-md="320px">
+        <pb-make-transfer></pb-make-transfer>
+      </div>
+      <div fxFlex="100%" fxFlex.gt-md="auto">
+        <pb-recent-transactions></pb-recent-transactions>
+      </div>
+    </div>
+  </pb-wrapper>
+
+  <div class="pb-footer"></div>
+</div>
+<div class="add-button">
+  <button fxShow fxHide.gt-md mat-fab (click)="this.toggleMobile()">
+    <mat-icon>compare_arrows</mat-icon>
+  </button>
+</div>

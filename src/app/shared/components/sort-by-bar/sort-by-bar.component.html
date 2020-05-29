@@ -1,0 +1,22 @@
+<mat-button-toggle-group
+  class="sort-by-bar-button-toggle-group"
+  #group="matButtonToggleGroup"
+  name="fontStyle"
+  aria-label="Font Style"
+  [value]="value?.sortBy"
+>
+  <mat-button-toggle
+    *ngFor="let button of sortByOptions"
+    [value]="button.value"
+    (change)="changeValue($event)"
+    class="sort-by-bar-toggle-button"
+  >
+    <span class="sort-by-bar-button-title">{{ button.name }}</span>
+    <mat-icon
+      class="sort-by-bar-arrow-icon"
+      [ngClass]="{ 'sort-by-bar-arrow-icon-desc': value?.sortOrder === 'DESC' }"
+      *ngIf="value?.sortBy === button.value"
+      >arrow_drop_up</mat-icon
+    >
+  </mat-button-toggle>
+</mat-button-toggle-group>

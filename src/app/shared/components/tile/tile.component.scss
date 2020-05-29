@@ -1,0 +1,6 @@
+@import '~@angular/material/theming';
+
+.pb-tile {
+  @include mat-elevation(4);
+  background-color: #ffffff;
+}
